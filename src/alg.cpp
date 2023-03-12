@@ -1,5 +1,6 @@
-#include <cstdint>
+// Copyright 2022 NNTU-CS
 #include "alg.h"
+#include <cstdint>
 
 double pown(double value, uint16_t n) {
     double ans = value;
