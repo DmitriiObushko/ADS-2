@@ -1,7 +1,6 @@
 #include <cstdint>
 #include "alg.h"
 
-
 double pown(double value, uint16_t n) {
     double ans = value;
     for (uint64_t i = 2; i <= n; i++)
@@ -10,10 +9,10 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-    uint64_t ans_ = 1;
+    uint64_t ans = 1;
     for (uint64_t i = 2; i <= n; i++)
-        ans_ *= i;
-    return ans_;
+        ans *= i;
+    return ans;
 }
 
 double calcItem(double x, uint16_t n) {
@@ -21,22 +20,22 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    double ans_ = 1;
+    double ans = 1;
     for (uint64_t i = 1; i <= count; i++)
-        ans_ += calcItem(x, i);
-    return ans_;
+        ans += calcItem(x, i);
+    return ans;
 }
 
 double sinn(double x, uint16_t count) {
-    double ans_ = x;
+    double ans = x;
     for (uint64_t i = 2; i <= count; i++)
-        ans_ += pown(-1, i - 1) * calcItem(x, 2 * i - 1);
-    return ans_;
+        ans += pown(-1, i - 1) * calcItem(x, 2 * i - 1);
+    return ans;
 }
 
 double cosn(double x, uint16_t count) {
-    double ans_ = 1;
+    double ans = 1;
     for (uint64_t i = 2; i <= count; i++)
-        ans_ *= pown(-1, i - 1) * calcItem(x, 2 * i - 2);
-    return ans_;
+        ans += pown(-1, i - 1) * calcItem(x, 2 * i - 2);
+    return ans;
 }
